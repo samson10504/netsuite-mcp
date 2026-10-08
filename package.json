@@ -1,0 +1,55 @@
+{
+  "name": "netsuite-mcp",
+  "version": "0.1.2",
+  "description": "Extensible MCP server for NetSuite - SuiteQL, record CRUD, and inventory adjustments, with more NetSuite operations added over time.",
+  "type": "module",
+  "bin": {
+    "netsuite-mcp": "./src/index.js"
+  },
+  "main": "./src/index.js",
+  "files": [
+    "src",
+    "README.md",
+    "LICENSE",
+    ".env.example"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "netsuite",
+    "suitetalk",
+    "suiteql",
+    "claude"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/samson10504/netsuite-mcp.git"
+  },
+  "homepage": "https://github.com/samson10504/netsuite-mcp#readme",
+  "bugs": {
+    "url": "https://github.com/samson10504/netsuite-mcp/issues"
+  },
+  "license": "MIT",
+  "author": "samson10504 <samson10504@gmail.com>",
+  "scripts": {
+    "lint": "eslint src scripts test",
+    "check": "node scripts/check-syntax.js",
+    "test": "node --test test/*.test.js",
+    "smoke": "node scripts/smoke-test.js",
+    "prepublishOnly": "npm run lint && npm run check && npm test && npm run smoke"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.30.0",
+    "zod": "^4.4.3"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "eslint": "^9.39.0"
+  },
+  "overrides": {
+    "@hono/node-server": "1.19.15"
+  }
+}
